@@ -85,7 +85,7 @@
 				if (subRed.length > 0) { subRed = 'r/' + subRed }
 				
 				$.getJSON(
-					"http://www.reddit.com/"+subRed+".json?limit=5&jsonp=?",
+					"http://www.reddit.com/"+subRed+".json?limit=25&jsonp=?",
 					function foo(data)
 					{
 						$.each(
