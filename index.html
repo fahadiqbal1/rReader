@@ -1,71 +1,172 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>rReader by fahadiqbal1</title>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>rReader</h1>
-        <p></p>
-
-        <p class="view"><a href="https://github.com/fahadiqbal1/rReader">View the Project on GitHub <small>fahadiqbal1/rReader</small></a></p>
+		<title>rReader</title>
+		
+		<link href="dist/css/bootstrap.css" rel="stylesheet">
+		<link href="assets/css/rReader.css" rel="stylesheet">
 
 
-        <ul>
-          <li><a href="https://github.com/fahadiqbal1/rReader/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/fahadiqbal1/rReader/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/fahadiqbal1/rReader">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+		<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		<script src="http://j.mp/jqymin"></script>
+		
+	</head>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+	<body>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+		<div class="container">
+			<div class="header">
+				<ul class="nav nav-pills pull-right">
+					<li>
+						<div class="input-group">
+							<span class="input-group-addon">/r/</span>
+							<input type="text" class="form-control" id="rInput" placeholder="Type a subreddit here">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-question-sign"></span></span>
+						</div>
+					</li>
+				</ul>
+				<h3 class="text-muted">rReader</h3>
+			</div>
+			
+			<div class="jumbotron">
+				<h1>Welcome to <strong>rReader</strong></h1>
+				<p class="lead">rReader is a simple Reddit reader built by Fahad to learn more about API's and JQuery<br/>
+				To get started, simply enter in the name of subreddit you want to read in the top right and hit Enter. If you want to see the frontpage, simple leave the textarea in the top right empty and hit Enter.</p>
+				<p><a class="btn btn-sm btn-danger" href="#">Need Help?</a></p>
+			</div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+			<div class="row marketing">
+				<div class="col-lg-12">
+					<div class="panel panel-default" id="loadingPanel">
+						<div class="panel-heading">Loading...</div>
+						<div class="panel-body">
+							rReader is getting content
+						</div>
+					</div>
+					<div id="rContent">
+				</div>
+			</div>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/fahadiqbal1">fahadiqbal1</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+			<div class="footer">
+				<p>&copy; Fahad Iqbal 2013</p>
+			</div>
+			
+		</div> <!-- /container -->
+		
+		<script>
+			$(document).ready(function() {
+				$("#loadingPanel").hide();
+			});
+			$(document).keypress(function(e) {
+				if(e.which == 13) {
+					getData($('#rInput').val()); 
+				}
+			});
+			
+			var pagetitle = $('title').text();
+			
+			function getData(subRed) {
+				document.title = ('');
+				document.title = (pagetitle + ' | ' +subRed);
+				$(".jumbotron").hide();
+				$("#loadingPanel").show();
+				$("#rContent").html('');
+				
+				if (subRed.length > 0) { subRed = 'r/' + subRed }
+				
+				$.getJSON(
+					"http://www.reddit.com/"+subRed+".json?limit=5&jsonp=?",
+					function foo(data)
+					{
+						$.each(
+						data.data.children.slice(0, 25),
+						function (i, post) {
+							var output = '';
+							var outputBody = '';
+								
+								//Check if Post is an image
+									var ifImg = '';
+									var url = post.data.url;
+									var extension = url.substr( (url.lastIndexOf('.') +1) );
+									switch(extension) {
+										case 'jpg':
+										case 'png':
+										case 'gif':
+											outputBody +='<img style="max-width:100%;" src="' + url + '">';
+										break;
+										default:
+									}
+								
+								//Change panel colour
+									var panelColor = ''
+									var subReddit = post.data.subreddit;
+									var adultSub = post.data.over_18;
+									if (subReddit === 'blog') { panelColor = 'info'; }
+									else if (adultSub === true) { panelColor = 'danger'; }
+									else { panelColor = 'default' }
+									
+								//Insert self-text
+									var selfText = post.data.selftext;
+									if(selfText) {
+										outputBody += selfText.substring(0,250);
+										outputBody += ' <span class="label label-info"><a href="'+url+'">...Read more</a></span>'
+									}
+							
+							output += '<div class="panel panel-'+panelColor+'">';
+								output += '<div class="panel-heading">';
+									output += '<a href="'+url+'">';
+									output += post.data.title;
+									output += '</a>';
+									output += '<span class="label label-default pull-right">';
+										output += post.data.subreddit;
+									output += '</span>';
+								output += '</div>';
+								output += '<div class="panel-body">';
+									output += outputBody;
+								output += '</div>';
+								output += '<div class="panel-footer">';
+									output += '<span class="label label-success">';
+										output += '<span class="glyphicon glyphicon-arrow-up"></span>';
+										output += post.data.ups;
+									output += '</span> ';
+									output += '<span class="label label-danger">';
+										output += '<span class="glyphicon glyphicon-arrow-down"></span>';
+										output += post.data.downs;
+									output += '</span>';
+									output += '<span class="pull-right">';
+										output += '<small><span class="glyphicon glyphicon-user"></span> ';
+										output += post.data.author;
+										output += ' </small>';
+										output += '<a class="btn btn-primary btn-xs" href="http://www.reddit.com' + post.data.permalink + '">';
+											output += 'Comments <span class="glyphicon glyphicon-comment"></span>';
+										output += '</a>';
+									output += '</span>';
+								output += '</div>';
+							output += '</div>';
+							
+							$("#rContent").append( output );
+							
+							$("#loadingPanel").hide();
+						}
+						)
+					}
+				)
+				//.success(function() { alert("second success"); })
+				.error(function() { alert("error"); })
+				//.complete(function() { alert("complete"); });
+				$("#reddit-content").html('');
+			}
+			
+		</script>
+	</body>
 </html>
